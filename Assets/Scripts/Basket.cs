@@ -3,13 +3,11 @@ using System.Collections;
 
 public class Basket : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	void OnCollisionEnter( Collision coll ) {                             
+		// Find out what hit this basket
+		GameObject collidedWith = coll.gameObject;                          
+		if ( collidedWith.tag == "Apple" ) {                                
+			Destroy( collidedWith );
+		}
 	}
 }
